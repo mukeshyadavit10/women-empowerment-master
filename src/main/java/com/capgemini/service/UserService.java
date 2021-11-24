@@ -75,9 +75,9 @@ private IUserRepository userRepository;
 //	}
 	
 
-	public User forgotPassword(String username) {
+	public User forgotPassword(User user) {
 
-		Optional<User> userOptional = Optional.ofNullable(usRepository.findByUserName(username));
+		Optional<User> userOptional = Optional.ofNullable(userRepository.findByUserName(user));
 
 		if (!userOptional.isPresent()) {
 		return "Invalid email id";
